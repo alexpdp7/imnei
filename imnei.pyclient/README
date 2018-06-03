@@ -1,3 +1,3 @@
 $ pipenv install --python 3.6 -e .[dev]
-$ pipenv run python -m grpc_tools.protoc -I. imnei_grpc/hello.proto  --python_out=. --grpc_python_out=.
-$ pipenv run python imnei.py localhost:42081 lala
+$ pipenv run python -m grpc_tools.protoc -I. imnei_grpc/imnei.proto  --python_out=. --grpc_python_out=.
+$ pipenv run python imnei.py localhost:42081

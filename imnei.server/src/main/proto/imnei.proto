@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option java_package = "net.pdp7.imnei.server.grpc";
+option java_outer_classname = "ImneiProto";
+
+package imnei;
+
+service Imnei {
+	rpc ConnectNew (ConnectNewMessage) returns (Connection) {}
+	rpc Connect(Connection) returns (Connection) {}
+}
+
+message Connection {
+	string id = 1;
+}
+
+message ConnectNewMessage {
+}

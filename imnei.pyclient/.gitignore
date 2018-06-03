@@ -1,5 +1,5 @@
 Pipfile
 Pipfile.lock
-imnei_grpc/hello_pb2.py
-imnei_grpc/hello_pb2_grpc.py
+imnei_grpc/imnei_pb2.py
+imnei_grpc/imnei_pb2_grpc.py
 imnei_pyclient.egg-info
