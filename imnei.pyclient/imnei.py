@@ -13,6 +13,10 @@ def connect_request(connection_id):
     return imnei_pb2.ChatRequest(connectRequest=imnei_pb2.ConnectRequest(connectionId=connection_id))
 
 
+def new_chat_request(connection_id):
+    return imnei_pb2.ChatRequest(newChatRequest=imnei_pb2.NewChatRequest(connectionId=connection_id))
+
+
 class ImneiClient:
     def __init__(self, server, connection_id):
         self.server = server
@@ -38,6 +42,9 @@ class ImneiClient:
 
     def _send_connect_request(self):
         self.send_queue.put(connect_request(self.connection_id))
+
+    def _send_new_chat_request(self):
+        self.send_queue.put(new_chat_request(self.connection_id))
 
     def _send_queue_iter(self):
         while True:
