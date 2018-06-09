@@ -36,6 +36,6 @@ public class ImneiProtoImpl extends ImneiImplBase {
 	}
 
 	protected void handleConnectRequest(StreamObserver<ChatResponse> responseObserver, ConnectRequest connectRequest) {
-		responseObserver.onNext(ChatResponse.newBuilder().setConnectResponse(imneiServer.handleConnectRequest(connectRequest)).build());
+		responseObserver.onNext(ChatResponse.newBuilder().setConnectResponse(imneiServer.handleConnectRequest(connectRequest.getConnectionId())).build());
 	}
 }
