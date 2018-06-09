@@ -17,7 +17,7 @@ public class ImneiServer {
 			connectionId = UUID.randomUUID().toString();
 			logger.debug("set to {}", connectionId);
 		}
-		return ConnectResponse.newBuilder().setConnectionResponse(connectionId).build();
+		return ConnectResponse.newBuilder().setConnectionId(connectionId).build();
 	}
 
 }

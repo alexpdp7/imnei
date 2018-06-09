@@ -14,7 +14,7 @@ message ConnectRequest {
 }
 
 message ConnectResponse {
-	string connectionResponse = 1;
+	string connectionId = 1;
 }
 
 message ChatRequest {

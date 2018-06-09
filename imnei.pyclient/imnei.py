@@ -27,7 +27,7 @@ class ImneiClient:
         for received in self.stub.Chat(self._send_queue_iter()):
             print(received)
             if received.HasField('connectResponse'):
-                self.connection_id = received.connectResponse.connectionResponse
+                self.connection_id = received.connectResponse.connectionId
                 print('new connection id is {0}'.format(self.connection_id))
 
     def _connect_to_server(self):
