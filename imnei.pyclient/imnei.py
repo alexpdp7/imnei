@@ -1,5 +1,6 @@
 import queue
 import sys
+import threading
 
 import grpc
 
@@ -20,6 +21,9 @@ class ImneiClient:
     def start(self):
         self._connect_to_server()
         self._send_connect_request()
+        threading.Thread(target=self._thread).start()
+
+    def _thread(self):
         for received in self.stub.Chat(self._send_queue_iter()):
             print(received)
 
