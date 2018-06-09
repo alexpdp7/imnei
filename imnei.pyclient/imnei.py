@@ -3,6 +3,7 @@ import sys
 import threading
 
 import grpc
+import ipdb
 
 from imnei_grpc import imnei_pb2
 from imnei_grpc import imnei_pb2_grpc
@@ -22,6 +23,7 @@ class ImneiClient:
         self._connect_to_server()
         self._send_connect_request()
         threading.Thread(target=self._thread).start()
+        ipdb.set_trace()
 
     def _thread(self):
         for received in self.stub.Chat(self._send_queue_iter()):
