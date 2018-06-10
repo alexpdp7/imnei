@@ -9,7 +9,6 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import io.netty.util.internal.ConcurrentSet;
 import net.pdp7.imnei.server.grpc.ImneiProto.ConnectResponse;
 import net.pdp7.imnei.server.grpc.ImneiProto.NewChatResponse;
 
