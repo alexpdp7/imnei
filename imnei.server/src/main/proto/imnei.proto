@@ -25,10 +25,16 @@ message NewChatResponse {
 	string chatId = 1;
 }
 
+message Message {
+	string chatId = 1;
+	string message = 2;
+}
+
 message ChatRequest {
 	oneof ChatRequest {
 		ConnectRequest connectRequest = 1;
 		NewChatRequest newChatRequest = 2;
+		Message message = 3;
 	}
 }
 
@@ -36,5 +42,6 @@ message ChatResponse {
 	oneof ChatResponse {
 		ConnectResponse connectResponse = 1;
 		NewChatResponse newChatResponse = 2;
+		Message message = 3;
 	}
 }

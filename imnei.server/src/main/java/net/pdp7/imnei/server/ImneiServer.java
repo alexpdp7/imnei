@@ -28,4 +28,9 @@ public class ImneiServer {
 		return NewChatResponse.newBuilder().setChatId(newChatId).build();
 	}
 
+	public void handleSentMessage(String chatId, String message) {
+		logger.debug("new message in {}: {}", chatId, message);
+		imneiMessenger.sendMessage(chatId, message);
+	}
+
 }

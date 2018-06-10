@@ -26,7 +26,10 @@ public class ImneiProtoImpl extends ImneiImplBase {
 					handleConnectRequest(responseObserver, request.getConnectRequest());
 				}
 				if(request.hasNewChatRequest()) {
-					handleNewChatRequest(responseObserver, request.getNewChatRequest());
+					handleNewChatRequest(responseObserver, request.getNewChatRequest(), connectionThread);
+				}
+				if(request.hasMessage()) {
+					handleSentMessage(responseObserver, request.getMessage());
 				}
 			}
 			@Override
