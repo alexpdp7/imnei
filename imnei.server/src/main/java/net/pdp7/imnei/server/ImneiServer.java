@@ -11,6 +11,11 @@ import net.pdp7.imnei.server.grpc.ImneiProto.NewChatResponse;
 public class ImneiServer {
 
 	protected final Logger logger = LoggerFactory.getLogger(getClass());
+	protected final ImneiMessenger imneiMessenger;
+
+	public ImneiServer(ImneiMessenger imneiMessenger) {
+		this.imneiMessenger = imneiMessenger;
+	}
 
 	public ConnectResponse handleConnectRequest(String  connectionId) {
 		logger.debug("connect request for {}", connectionId);
