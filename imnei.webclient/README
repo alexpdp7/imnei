@@ -1,0 +1,7 @@
+npm install
+npm start
+
+http://localhost:8081
+
+You might have to visit the wss:// address in your browser and accept the
+certificate first.
