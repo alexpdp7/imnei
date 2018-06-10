@@ -48,7 +48,9 @@ class ImneiClient:
 
     def _send_queue_iter(self):
         while True:
-            yield self.send_queue.get(True)
+            q = self.send_queue.get(True)
+            print(q)
+            yield q
 
 
 def main():
