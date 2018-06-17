@@ -32,7 +32,7 @@ public class ImneiProtoImpl extends ImneiImplBase {
 					imneiServer.handleSentMessage(message.getChatId(), message.getMessage());
 				}
 				if(request.hasSubscribeChatRequest()) {
-					imneiServer.subscribeChat(request.getSubscribeChatRequest().getChatId(), (String message) -> responseObserver.onNext(ChatResponse.newBuilder().setMessage(Message.newBuilder().setMessage(message).build()).build()));
+					imneiServer.subscribeChat(request.getSubscribeChatRequest().getChatId(), (String chatId, String message) -> responseObserver.onNext(ChatResponse.newBuilder().setMessage(Message.newBuilder().setMessage(message).setChatId(chatId).build()).build()));
 				}
 			}
 			@Override

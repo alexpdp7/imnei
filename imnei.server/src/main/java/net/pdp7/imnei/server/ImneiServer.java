@@ -37,7 +37,7 @@ public class ImneiServer {
 	public void handleSentMessage(String chatId, String message) {
 		logger.debug("new message in {}: {}", chatId, message);
 		for(ChatListener listener : chatListeners.get(chatId)) {
-			listener.newMessage(message);
+			listener.newMessage(chatId, message);
 		}
 	}
 
@@ -46,6 +46,6 @@ public class ImneiServer {
 	}
 
 	public interface ChatListener {
-		public void newMessage(String message);
+		public void newMessage(String chatId, String message);
 	}
 }
